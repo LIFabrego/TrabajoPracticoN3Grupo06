@@ -1,3 +1,8 @@
+Snake snake;
+Animal animal;
+int startTime;
+
 setup();
 draw();
-keyPressed()
+//void mostrarPuntaje();
+keyPressed();
