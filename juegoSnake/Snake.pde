@@ -5,11 +5,10 @@ class Snake extends GameObject{
   
   public Snake(){
     posicion= new PVector(50,50);
-    velocidad= new PVector();
+    velocidad= new PVector(5,5);
     largo = 1;
     d=25;
   }
-  public void mover(){};
   public void display(){
     noStroke();
     fill(0);
@@ -21,4 +20,41 @@ class Snake extends GameObject{
   public void comer(){
   };
   public void crecer(){};
+
+  public void mover(int direccion){
+    switch(direccion){
+      case 0: {
+        this.posicion.y-=this.velocidad.y;
+        break;
+      }
+      case 1:{
+        this.posicion.y+=this.velocidad.y;
+        break;
+      }
+      case 3:{
+        this.posicion.x-=this.velocidad.x;
+        break;
+      }
+      case 4:{
+        this.posicion.x+=this.velocidad.x;
+        break;
+      }
+    }
+  }
+  // set and get
+    public PVector getPosicion(){
+    return this.posicion;
+  }
+  
+  public void setPosicion(PVector posicion){
+    this.posicion = posicion;
+  }
+  
+  public PVector getVelocidad(){
+    return this.velocidad;
+  }
+  
+  public void setVelocidad(PVector velocidad){
+    this.velocidad=velocidad;
+  }
 }
