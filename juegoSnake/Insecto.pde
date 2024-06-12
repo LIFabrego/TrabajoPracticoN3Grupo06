@@ -1,5 +1,5 @@
-class Insecto extends Animal{
-  void Insecto(){};
+//class Insecto extends Animal{
+//  void Insecto(){};
   
-  public void display(){};
-}
+//  public void display(){};
+//}

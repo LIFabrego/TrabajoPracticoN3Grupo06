@@ -1,7 +1,7 @@
-class Animal extends GameObject{
- private PVector posicion;
- private color Col;
+//class Animal extends GameObject{
+// private PVector posicion;
+// private color Col;
  
- public Animal(){};
- public void display(){};
-}
+// public Animal(){};
+// public void display(){};
+//}

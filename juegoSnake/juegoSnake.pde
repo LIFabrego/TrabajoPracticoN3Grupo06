@@ -1,8 +1,24 @@
-Snake snake;
-Animal animal;
-int startTime;
+//Snake snake;
+//Animal animal;
+//int startTime;
 
-setup();
-draw();
-//void mostrarPuntaje();
-keyPressed();
+public void setup(){
+  size(600,600);
+}
+public void draw(){
+  background(0,255,0);
+}
+//public void keyReleased(){
+//  if(key=='w' || keyCode==UP){
+//    joyPad.setUpPressed(false);
+//  }
+//  if(key=='s' || keyCode==DOWN){
+//    joyPad.setDownPressed(false);
+//  }
+//    if(key=='a' || keyCode==LEFT){
+//    joyPad.setLeftPressed(false);
+//  }
+//    if(key=='d' || keyCode==RIGHT){
+//    joyPad.setRightPressed(false);
+//  }
+//}

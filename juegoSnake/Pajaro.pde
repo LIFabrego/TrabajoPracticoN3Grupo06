@@ -1,5 +1,5 @@
-class Pajaro extends Animal{
-  void Pajaro(){};
+//class Pajaro extends Animal{
+//  void Pajaro(){};
   
-  public void display(){};
-}
+//  public void display(){};
+//}
