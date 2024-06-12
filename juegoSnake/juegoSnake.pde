@@ -1,12 +1,14 @@
-//Snake snake;
+Snake snake;
 //Animal animal;
 //int startTime;
 
 public void setup(){
-  size(600,600);
+  size(800,800);
+  snake = new Snake();
 }
 public void draw(){
   background(0,255,0);
+  snake.display();
 }
 //public void keyReleased(){
 //  if(key=='w' || keyCode==UP){
