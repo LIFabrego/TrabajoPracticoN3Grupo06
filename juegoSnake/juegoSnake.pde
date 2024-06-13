@@ -4,6 +4,7 @@ Animal animal;
 
 public void setup(){
   size(800,800);
+  frameRate(10);
   snake = new Snake();
   animal = new Animal();
   animal.setPosicion(new PVector(random(width),random(height)));
@@ -19,15 +20,15 @@ public void draw(){
 }
 public void keyPressed(){
   if(key=='w' || keyCode==UP){
-    snake.setVelocidad(new PVector (0,-1));
+    snake.setDireccion(new PVector (0,-1));
   }
   if(key=='s' || keyCode==DOWN){
-   snake.setVelocidad(new PVector (0,1));
+   snake.setDireccion(new PVector (0,1));
   }
     if(key=='a' || keyCode==LEFT){
-    snake.setVelocidad(new PVector (-1,0));
+    snake.setDireccion(new PVector (-1,0));
   }
     if(key=='d' || keyCode==RIGHT){
-    snake.setVelocidad(new PVector (1,0));
+    snake.setDireccion(new PVector (1,0));
   }
 }
