@@ -13,13 +13,13 @@ class Snake extends GameObject{
     noStroke();
     fill(0);
     rect(this.posicion.x,this.posicion.y,d,d);
-    //for (Cuadrado c: cuadrado){
-    //  rect(this.posicion.x,this.posicion.y,10,10);
-    //}
-  };
+    for(int i = 0; i < cuadrado.size(); i ++) {
+      rect(this.posicion.x * d,this.posicion.y * d, d, d);
+    }
+  }
   public void comer(){
-  };
-  public void crecer(){};
+  }
+  public void crecer(){}
 
   public void mover(){
     this.posicion.x+=this.velocidad.x*5;
