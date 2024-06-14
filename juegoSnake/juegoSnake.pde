@@ -2,6 +2,7 @@ Snake snake;
 Animal animal;
 int d=25;
 ArrayList<Animal> comida;
+int tiempo[]; 
 Timer startTime;
 
 public void setup(){
@@ -40,7 +41,11 @@ public void draw(){
     textAlign(CENTER, CENTER);
     textSize(32);
     fill(255, 0, 0);
-    text("Puntaje Total: "+snake.getPuntaje(), width / 2, height / 2);
+    text("JUEGO FINALIZADO",width/2,100);
+    text("Puntaje Total: "+snake.getPuntaje(), width / 2, 150);
+  for (int i = 0; i < comida.size(); i++) {
+    text(comida.get(i).getNombre(), width/2, 250 + i * 30);
+  }
   }
 }
 
