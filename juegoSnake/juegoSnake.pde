@@ -6,20 +6,22 @@ int d=25;
 public void setup(){
   size(600,600);
   frameRate(10);
-  snake = new Snake(d);
+  snake = new Snake();
   elegirAnimal();
+  
 
 }
 public void draw(){
   background(0,255,0);
+  drawGrid();
   snake.display();
   snake.mover();
-
+  
   if (snake.comer(animal)){
+      println("hay colision");
       elegirAnimal();
   }
   animal.display();
-
 }
 
   public void elegirAnimal(){
@@ -48,5 +50,16 @@ public void keyPressed(){
   }
     if(key=='d' || keyCode==RIGHT){
     snake.setDireccion(new PVector (1,0));
+  }
+}
+
+void drawGrid(){
+  for(int i=d; i<width; i+=d){
+    stroke(0,0,0);
+    line(i,0,i,width-30);
+  }
+  for(int i=d; i<width-30; i+=d){
+    stroke(0,0,0);
+    line(0,i,height,i); 
   }
 }

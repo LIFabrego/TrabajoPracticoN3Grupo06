@@ -6,12 +6,12 @@ class Animal extends GameObject{
 
  
  public Animal(color col,int d){
-   float x = width/d;
-   float y = height/d;
+   float x = int(random(int(width/d)));
+   float y = int(random(int(height/d)));
    this.col=col;
-   this.posicion=new PVector(random(x)*d,random(y)*d);
+   this.posicion=new PVector((x*d),(y*d));
    cuadrado=new Cuadrado(this.posicion,col);
-   this.collider= new ColliderCuadrado(this.posicion,d);
+   this.collider= new ColliderCuadrado(this.posicion);
  }
 
  public void display(){
@@ -26,6 +26,7 @@ class Animal extends GameObject{
   public void setPosicion(PVector posicion){
     this.posicion = posicion;
   }
+  
   public ColliderCuadrado getCollider(){
     return this.collider;
   }

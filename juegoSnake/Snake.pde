@@ -3,10 +3,10 @@ class Snake extends GameObject{
   ArrayList<Cuadrado> cuadrado;
   private ColliderCuadrado collider;
   
-  public Snake(int d){
+  public Snake(){
     cuadrado=new ArrayList<Cuadrado>();
-    cuadrado.add(new Cuadrado(new PVector (width/2,height/2),color (0,0,0)));
-    this.collider=new ColliderCuadrado(new PVector(cuadrado.get(0).x,cuadrado.get(0).y),d);
+    cuadrado.add(new Cuadrado(new PVector (0,0),color (0,0,0)));
+    
     this.direccion= new PVector(1,0);
   }
   public void display(){
@@ -16,6 +16,11 @@ class Snake extends GameObject{
   }
   public boolean comer(Animal a){
     boolean isCollide = this.collider.validarColision(a.getCollider());
+    //if(isCollide){
+    //  println("Hay Colision");
+    //}else{
+    //  println("No Hay Colision");
+    //}
     return isCollide;
   }
   //public void crecer(){}
@@ -35,6 +40,8 @@ class Snake extends GameObject{
     }
     cuadrado.add(0, new Cuadrado(new PVector(x,y), color(0, 0, 0)));
     cuadrado.remove(cuadrado.size() - 1);
+    this.collider=new ColliderCuadrado(new PVector(cuadrado.get(0).x,cuadrado.get(0).y));
+    //println("posicion cabeza="+x+","+y);
   }
   // set and get
  

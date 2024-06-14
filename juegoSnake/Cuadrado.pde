@@ -9,6 +9,7 @@ class Cuadrado{
     this.col = col;
   }
   public void display(){
+    
     fill(col);
     rect(x,y,d,d);
   }

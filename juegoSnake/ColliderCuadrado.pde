@@ -1,20 +1,24 @@
 class ColliderCuadrado{
-  private float x,y,distancia;
+  private PVector posicion;
   
-  public ColliderCuadrado(PVector posicion,float dist){
-    this.x=posicion.x;
-    this.y=posicion.y;
-    this.distancia=dist;
+  public ColliderCuadrado(PVector posicion){
+    this.posicion=posicion;
   }
   
   public boolean validarColision (ColliderCuadrado otroCollider){
-    boolean isCollide=false;
-    if( (this.x < otroCollider.x + distancia) && 
-            (this.x+distancia > otroCollider.x) && 
-            (this.y < otroCollider.y + distancia) && 
-            (this.y+distancia > otroCollider.y)){
-              isCollide = true;
+    boolean isCollider=false;
+    println(this.posicion+"--"+otroCollider.getPosicion());
+    if(this.posicion.x==otroCollider.getPosicion().x && this.posicion.y==otroCollider.getPosicion().y){
+              isCollider=true;
             }
-     return isCollide;
+    return isCollider;        
   }
+  
+  public PVector getPosicion(){
+    return this.posicion;
+  }
+  //public void setPosicion(){
+  //  this.posicion=posicion;
+  //}
+
 }
