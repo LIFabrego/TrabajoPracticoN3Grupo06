@@ -1,11 +1,13 @@
 class Pajaro extends Animal{
-  PVector P;
-  public Pajaro(){};
-  
-  public void display(PVector posicion){
-    P=posicion;
-    noStroke();
-    fill(50);
-    rect(P.x,P.y,10,10);
+  //PVector P;
+  public Pajaro(){
+  super(color(0,250,0));
   }
+  
+  //public void display(PVector posicion){
+  //  P=posicion;
+  //  noStroke();
+  //  fill(50);
+  //  rect(P.x,P.y,10,10);
+  //}
 }

@@ -1,19 +1,17 @@
 class Animal extends GameObject{
+ Cuadrado cuadrado;
  private PVector posicion;
- //private color Col;
- //int r;
- //Raton raton;
- //Pajaro pajaro;
- //Insecto insecto;
- 
- public Animal(){
+ private color col;
 
+ 
+ public Animal(color col){
+   this.col=col;
+   this.posicion=new PVector(random(width),random(height));
+   cuadrado=new Cuadrado(this.posicion,col);
  }
 
  public void display(){
-    noStroke();
-    fill(250,250,250);
-    rect(this.posicion.x,this.posicion.y,20,20);
+    cuadrado.display();
    }
    //public void nuevoAnimal(){
    //  r=int(random(1,3));

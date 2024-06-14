@@ -6,8 +6,8 @@ public void setup(){
   size(800,800);
   frameRate(10);
   snake = new Snake();
-  animal = new Animal();
-  animal.setPosicion(new PVector(random(width),random(height)));
+  animal = new Animal(color(250,0,250));
+  //animal.setPosicion(new PVector(random(width),random(height)));
   //animal.nuevoAnimal();
 
 }
