@@ -1,7 +1,7 @@
 class Pajaro extends Animal{
   //PVector P;
   public Pajaro(){
-  super(color(0,250,0));
+  super(color(0,250,250));
   }
   
   //public void display(PVector posicion){

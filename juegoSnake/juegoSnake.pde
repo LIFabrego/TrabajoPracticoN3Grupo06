@@ -6,9 +6,9 @@ public void setup(){
   size(800,800);
   frameRate(10);
   snake = new Snake();
-  animal = new Animal(color(250,0,250));
+  //animal = new Animal(color(250,0,250));
   //animal.setPosicion(new PVector(random(width),random(height)));
-  //animal.nuevoAnimal();
+  mostrarAnimal();
 
 }
 public void draw(){
@@ -18,6 +18,21 @@ public void draw(){
   animal.display();
 
 }
+
+  public void mostrarAnimal(){
+    int tipo=int(random(3));
+    switch(tipo){
+      case 0:
+        animal=new Raton();
+        break;
+      case 1:
+        animal=new Pajaro();
+        break;
+      case 2:
+        animal=new Insecto();
+        break;        
+    }
+  }
 public void keyPressed(){
   if(key=='w' || keyCode==UP){
     snake.setDireccion(new PVector (0,-1));

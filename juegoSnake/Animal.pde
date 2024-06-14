@@ -38,7 +38,7 @@ class Animal extends GameObject{
    //}
    //}
   // set and get
-    public PVector getPosicion(){
+  public PVector getPosicion(){
     return this.posicion;
   }
   
