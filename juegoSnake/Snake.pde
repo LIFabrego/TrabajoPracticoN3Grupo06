@@ -1,15 +1,13 @@
 class Snake extends GameObject{
   private PVector direccion;
-  int d=20;
   ArrayList<Cuadrado> cuadrado;
   private ColliderCuadrado collider;
   
-  public Snake(){
+  public Snake(int d){
     cuadrado=new ArrayList<Cuadrado>();
-    cuadrado.add(new Cuadrado(new PVector (5*d,5*d),color (0,0,0)));
+    cuadrado.add(new Cuadrado(new PVector (width/2,height/2),color (0,0,0)));
     this.collider=new ColliderCuadrado(new PVector(cuadrado.get(0).x,cuadrado.get(0).y),d);
     this.direccion= new PVector(1,0);
-    //largo = 1;
   }
   public void display(){
         for (Cuadrado c: cuadrado){
@@ -39,14 +37,7 @@ class Snake extends GameObject{
     cuadrado.remove(cuadrado.size() - 1);
   }
   // set and get
-  //public PVector getPosicion(){
-  //  return this.posicion;
-  //}
-  
-  //public void setPosicion(PVector posicion){
-  //  this.posicion = posicion;
-  //}
-  
+ 
   public PVector getDireccion(){
     return this.direccion;
   }

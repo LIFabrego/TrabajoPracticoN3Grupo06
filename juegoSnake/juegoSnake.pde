@@ -1,28 +1,28 @@
 Snake snake;
 Animal animal;
+int d=25;
 //int startTime;
 
 public void setup(){
-  size(800,800);
+  size(600,600);
   frameRate(10);
-  snake = new Snake();
-  //animal = new Animal(color(250,0,250));
-  //animal.setPosicion(new PVector(random(width),random(height)));
-  mostrarAnimal();
+  snake = new Snake(d);
+  elegirAnimal();
 
 }
 public void draw(){
   background(0,255,0);
   snake.display();
   snake.mover();
-  animal.display();
+
   if (snake.comer(animal)){
-      mostrarAnimal();
+      elegirAnimal();
   }
+  animal.display();
 
 }
 
-  public void mostrarAnimal(){
+  public void elegirAnimal(){
     int tipo=int(random(3));
     switch(tipo){
       case 0:

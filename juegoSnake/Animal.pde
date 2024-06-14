@@ -5,11 +5,13 @@ class Animal extends GameObject{
  private ColliderCuadrado collider;
 
  
- public Animal(color col){
+ public Animal(color col,int d){
+   float x = width/d;
+   float y = height/d;
    this.col=col;
-   this.posicion=new PVector(random(width),random(height));
+   this.posicion=new PVector(random(x)*d,random(y)*d);
    cuadrado=new Cuadrado(this.posicion,col);
-   this.collider= new ColliderCuadrado(this.posicion,20);
+   this.collider= new ColliderCuadrado(this.posicion,d);
  }
 
  public void display(){

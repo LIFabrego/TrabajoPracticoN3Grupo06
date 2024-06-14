@@ -1,6 +1,6 @@
 class Cuadrado{
   private float x,y;
-  private int d=20;
+  private int d=25;
   private color col;
   
   public Cuadrado(PVector lado,color col){
