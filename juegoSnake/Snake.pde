@@ -2,11 +2,12 @@ class Snake extends GameObject{
   private PVector direccion;
   ArrayList<Cuadrado> cuadrado;
   private ColliderCuadrado collider;
+  private int puntaje;
   
   public Snake(){
     cuadrado=new ArrayList<Cuadrado>();
     cuadrado.add(new Cuadrado(new PVector (0,0),color (0,0,0)));
-    
+    this.puntaje=0;
     this.direccion= new PVector(1,0);
   }
   public void display(){
@@ -28,7 +29,9 @@ class Snake extends GameObject{
     float newY = cuadrado.get(cuadrado.size() - 1).y;
     cuadrado.add(new Cuadrado(new PVector(newX,newY), color(0, 255, 0)));
   }
-
+  public void puntaje(Animal a){
+    this.puntaje=this.puntaje+a.getValor();
+  }
   public void mover(){
     float x=cuadrado.get(0).x+this.direccion.x*d;
     float y=cuadrado.get(0).y+this.direccion.y*d;
@@ -37,10 +40,10 @@ class Snake extends GameObject{
     } else if (x<0){
         x=width;
     }
-    if (y>height){
+    if (y>height-d*2){
         y=0;
     } else if(y<0){
-        y=height;
+        y=height-d*2;
     }
     cuadrado.add(0, new Cuadrado(new PVector(x,y), color(0, 0, 0)));
     cuadrado.remove(cuadrado.size() - 1);
@@ -55,5 +58,8 @@ class Snake extends GameObject{
   
   public void setDireccion(PVector direccion){
     this.direccion=direccion;
+  }
+  public int getPuntaje(){
+    return this.puntaje;
   }
 }

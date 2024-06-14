@@ -13,7 +13,7 @@ class Animal extends GameObject{
    this.valor=valor;
    //
    float x = int(random(int(width/d)));
-   float y = int(random(int(height/d)));
+   float y = int(random(int((height-30)/d)));
    this.col=col;
    this.posicion=new PVector((x*d),(y*d));
    cuadrado=new Cuadrado(this.posicion,col);

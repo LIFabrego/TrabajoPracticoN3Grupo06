@@ -1,11 +1,13 @@
 Snake snake;
 Animal animal;
 int d=25;
+ArrayList<Animal> comida;
 //int startTime;
 
 public void setup(){
   size(600,600);
   frameRate(10);
+  comida=new ArrayList <Animal>();
   snake = new Snake();
   elegirAnimal();
   
@@ -18,11 +20,19 @@ public void draw(){
   snake.mover();
   
   if (snake.comer(animal)){
-      println("Comida: "+animal.getNombre()+"-- Valor: "+animal.getValor());
+      comida.add(animal);
+      //text("comida: "+animal.getNombre(),d*5,height-d/2);
       snake.crecer();
+      snake.puntaje(animal);
       elegirAnimal();
   }
   animal.display();
+  fill(0);
+  textSize(d);
+  text("Puntuacion: " + snake.getPuntaje(), d, height-d/2);
+  if (comida.size()-1>=0){
+    text("comida: "+comida.get(comida.size()-1).getNombre(),d*10,height-d/2);
+  }
 }
 
   public void elegirAnimal(){
