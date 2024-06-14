@@ -2,7 +2,7 @@ Snake snake;
 Animal animal;
 int d=25;
 ArrayList<Animal> comida;
-int tiempo[]; 
+ArrayList<Integer> tiempo; 
 Timer startTime;
 
 public void setup(){
@@ -11,6 +11,7 @@ public void setup(){
   comida=new ArrayList <Animal>();
   snake = new Snake();
   elegirAnimal();
+  tiempo=new ArrayList <Integer>();
   startTime=new Timer(60);
   startTime.start();
 }
@@ -23,6 +24,8 @@ public void draw(){
   
   if (snake.comer(animal)){
       comida.add(animal);
+      int tim=startTime.getElapsedSeconds();
+      tiempo.add(tim);
       //text("comida: "+animal.getNombre(),d*5,height-d/2);
       snake.crecer();
       snake.puntaje(animal);
@@ -44,7 +47,7 @@ public void draw(){
     text("JUEGO FINALIZADO",width/2,100);
     text("Puntaje Total: "+snake.getPuntaje(), width / 2, 150);
   for (int i = 0; i < comida.size(); i++) {
-    text(comida.get(i).getNombre(), width/2, 250 + i * 30);
+    text(comida.get(i).getNombre()+"-----------"+tiempo.get(i), width/2,185 + i * 30);
   }
   }
 }

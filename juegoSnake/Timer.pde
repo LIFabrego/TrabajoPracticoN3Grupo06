@@ -2,10 +2,12 @@ class Timer{
   private int duration;
   private int startTime;
   private boolean running;
+  private int second;
   
   public Timer(int durationInSeconds) {
     this.duration = durationInSeconds;
     this.running = false;
+    this.second=0;
   }
 
   public void start() {
@@ -28,5 +30,8 @@ class Timer{
     } else {
       return duration;
     }
+  }
+  public int getSecond(){
+    return this.second;
   }
 }
