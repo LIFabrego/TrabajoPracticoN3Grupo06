@@ -3,9 +3,15 @@ class Animal extends GameObject{
  private PVector posicion;
  private color col;
  private ColliderCuadrado collider;
+ private String nombre;
+ private int valor;
 
  
- public Animal(color col,int d){
+ public Animal(color col,int d,String nombre, int valor){
+   //nombre animal y valor
+   this.nombre=nombre;
+   this.valor=valor;
+   //
    float x = int(random(int(width/d)));
    float y = int(random(int(height/d)));
    this.col=col;
@@ -19,6 +25,12 @@ class Animal extends GameObject{
    }
 
   // set and get
+  public String getNombre(){
+    return this.nombre;
+  }
+  public int getValor(){
+    return this.valor;
+  }
   public PVector getPosicion(){
     return this.posicion;
   }

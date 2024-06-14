@@ -23,7 +23,11 @@ class Snake extends GameObject{
     //}
     return isCollide;
   }
-  //public void crecer(){}
+  public void crecer(){
+    float newX = cuadrado.get(cuadrado.size() - 1).x;
+    float newY = cuadrado.get(cuadrado.size() - 1).y;
+    cuadrado.add(new Cuadrado(new PVector(newX,newY), color(0, 255, 0)));
+  }
 
   public void mover(){
     float x=cuadrado.get(0).x+this.direccion.x*d;

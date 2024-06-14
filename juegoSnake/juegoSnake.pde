@@ -18,7 +18,8 @@ public void draw(){
   snake.mover();
   
   if (snake.comer(animal)){
-      println("hay colision");
+      println("Comida: "+animal.getNombre()+"-- Valor: "+animal.getValor());
+      snake.crecer();
       elegirAnimal();
   }
   animal.display();

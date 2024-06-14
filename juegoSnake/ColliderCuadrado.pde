@@ -7,7 +7,7 @@ class ColliderCuadrado{
   
   public boolean validarColision (ColliderCuadrado otroCollider){
     boolean isCollider=false;
-    println(this.posicion+"--"+otroCollider.getPosicion());
+    //println(this.posicion+"--"+otroCollider.getPosicion());
     if(this.posicion.x==otroCollider.getPosicion().x && this.posicion.y==otroCollider.getPosicion().y){
               isCollider=true;
             }
