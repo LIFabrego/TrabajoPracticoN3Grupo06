@@ -1,13 +1,13 @@
 class Snake extends GameObject{
   private PVector direccion;
   int d=20;
-  //private int puntaje,largo,d;
   ArrayList<Cuadrado> cuadrado;
+  private ColliderCuadrado collider;
   
   public Snake(){
     cuadrado=new ArrayList<Cuadrado>();
     cuadrado.add(new Cuadrado(new PVector (5*d,5*d),color (0,0,0)));
-    //posicion= new PVector(50,50);
+    this.collider=new ColliderCuadrado(new PVector(cuadrado.get(0).x,cuadrado.get(0).y),d);
     this.direccion= new PVector(1,0);
     //largo = 1;
   }
@@ -16,8 +16,10 @@ class Snake extends GameObject{
           c.display();
         }
   }
-  //public void comer(){
-  //}
+  public boolean comer(Animal a){
+    boolean isCollide = this.collider.validarColision(a.getCollider());
+    return isCollide;
+  }
   //public void crecer(){}
 
   public void mover(){

@@ -12,4 +12,7 @@ class Cuadrado{
     fill(col);
     rect(x,y,d,d);
   }
+  public PVector getPosicion(){
+    return new PVector (this.x,this.y);
+  }
 }

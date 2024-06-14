@@ -16,6 +16,9 @@ public void draw(){
   snake.display();
   snake.mover();
   animal.display();
+  if (snake.comer(animal)){
+      mostrarAnimal();
+  }
 
 }
 
