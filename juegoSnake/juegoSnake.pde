@@ -84,10 +84,10 @@ public void keyPressed(){
 void drawGrid(){
   for(int i=d; i<width; i+=d){
     stroke(0,0,0);
-    line(i,0,i,width-30);
+    line(i,0,i,height-d*2);
   }
-  for(int i=d; i<width-30; i+=d){
+  for(int i=d; i<height-d; i+=d){
     stroke(0,0,0);
-    line(0,i,height,i); 
+    line(0,i,width,i); 
   }
 }

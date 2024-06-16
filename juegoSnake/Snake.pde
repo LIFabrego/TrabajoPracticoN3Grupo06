@@ -40,10 +40,10 @@ class Snake extends GameObject{
     } else if (x<0){
         x=width;
     }
-    if (y>height-d*2){
+    if (y>height-d*3){
         y=0;
     } else if(y<0){
-        y=height-d*2;
+        y=height-d*3;
     }
     cuadrado.add(0, new Cuadrado(new PVector(x,y), color(0, 0, 0)));
     cuadrado.remove(cuadrado.size() - 1);
